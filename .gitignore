@@ -1,0 +1,7 @@
+.DS_Store
+.devcontainer
+.vscode
+.dockerignore
+docker-compose*
+Dockerfile
+requirements.txt
