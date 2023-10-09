@@ -2,6 +2,7 @@ from django.db import models
 from django.urls import reverse
 
 from django.utils import timezone
+from django.utils import gettext as _
 
 from datetime import datetime, timedelta
 
@@ -34,7 +35,10 @@ class Client(models.Model):
         """Returns the full name representation of the client company
         including its parent company name.
         """
-        return self.parent + ' ' + self.name
+        if self.parent:
+            return self.parent + ' ' + self.name
+        else:
+            self.name
 
     class Meta:
         ordering = ['full_name']
