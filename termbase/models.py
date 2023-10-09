@@ -29,11 +29,19 @@ class Client(models.Model):
         null=True
     )
 
+    @property
+    def full_name(self):
+        """Returns the full name representation of the client company
+        including its parent company name.
+        """
+        pass
+
     class Meta:
         ordering = ['parent', 'name']
 
     def __str__(self):
         """Human-readable string representation for validation."""
+        pass
 
     def get_absolute_url(self):
         return reverse("termbase:view-clients", kwargs={"pk": self.pk})
