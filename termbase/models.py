@@ -60,6 +60,10 @@ class Topic(models.Model):
         null=True,
     )
 
+    def __str__(self):
+        """Human-readable string representation for validation."""
+        return self.name
+
 
 class Domain(models.Model):
     pass
