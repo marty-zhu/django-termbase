@@ -24,7 +24,7 @@ class Client(models.Model):
         null=True
     )
     description = models.CharField(
-        max_length=300,
+        max_length=255,
         blank=True,
         null=True
     )
