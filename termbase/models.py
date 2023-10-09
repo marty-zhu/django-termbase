@@ -44,12 +44,17 @@ class Client(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse("termbase:view-clients", kwargs={"pk": self.pk})
+        return reverse("termbase:view-client", kwargs={"pk": self.pk})
     
 
 
 class Topic(models.Model):
-    pass
+    name = models.CharField(max_length=50)
+    description = models.CharField(
+        max_length=255,
+        blank=True,
+        null=True,
+    )
 
 
 class Domain(models.Model):
