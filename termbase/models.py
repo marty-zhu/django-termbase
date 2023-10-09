@@ -53,7 +53,7 @@ class Client(models.Model):
 
 
 class Topic(models.Model):
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=15)
     description = models.CharField(
         max_length=255,
         blank=True,
