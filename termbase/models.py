@@ -79,6 +79,29 @@ class Domain(models.Model):
 
 
 class Term(models.Model):
-    KNOWLEDGE_TYPE = ()
-    REGISTER = ()
+    TYPE_CONCEPT = 'c'
+    TYPE_FACT = 'f'
+    TYPE_PROCEDURE = 'p'
+
+    KNOWLEDGE_TYPE = (
+        (TYPE_CONCEPT, 'Concept'),
+        (TYPE_FACT, 'Fact'),
+        (TYPE_PROCEDURE, 'Procedure')
+    )
+
+    REG_LITERARY = 'li'
+    REG_FORMAL = 'fo'
+    REG_NORMAL = 'no'
+    REG_INFORMAL = 'if'
+    REG_FAMILIAR = 'fa'
+    REG_SLANG = 'sl'
+    REGISTER = (
+        (REG_LITERARY, 'Literary'),
+        (REG_FORMAL, 'Formal'),
+        (REG_NORMAL, 'Normal'),
+        (REG_INFORMAL, 'Informal'),
+        (REG_FAMILIAR, 'Familiar'),
+        (REG_SLANG, 'Slang'),
+    )
+
     pass
