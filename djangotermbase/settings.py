@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'django_tenants.middleware.main.TenantMainMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -75,16 +76,19 @@ WSGI_APPLICATION = 'djangotermbase.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django_tenants.postgresql_backend',
         'NAME': 'djangotermbase',
         'USER': 'djangotermbase',
         'PASSWORD': 'testing',
         'HOST': 'postgresdb',
         'PORT': '5432',
-        'CONN_MAX_AGE': 60,
+        'CONN_MAX_AGE': 60,  # in seconds, None for unlimited.
     }
 }
 
+DATABASE_ROUTERS = (
+    'django_tenants.routers.TenantSyncRouter',
+)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

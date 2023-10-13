@@ -95,6 +95,7 @@ class Term(models.Model):
     REG_INFORMAL = 'if'
     REG_FAMILIAR = 'fa'
     REG_SLANG = 'sl'
+
     REGISTER = (
         (REG_LITERARY, 'Literary'),
         (REG_FORMAL, 'Formal'),
@@ -103,5 +104,4 @@ class Term(models.Model):
         (REG_FAMILIAR, 'Familiar'),
         (REG_SLANG, 'Slang'),
     )
-
     pass
